@@ -1,0 +1,27 @@
+<h2>Tests page</h2>
+
+{{#if tests.length}}
+    <ul>
+        {{#each tests}}
+            <li class="test">
+                <form action="/complete" method="POST">
+                    <label>
+                        {{#if completed}}
+                            <input type="checkbox" checked name="completed">
+                            <span class="completed">{{title}}</span>
+                        {{else}}
+                            <input type="checkbox" name="completed">
+                            <span>{{title}}</span>
+                        {{/if}}
+
+                        <button class="btn btn-small">Save</button>
+                    </label>
+                </form>
+            </li>
+
+        {{/each}}
+    </ul>
+
+{{else}}
+    <p>No tests!</p>
+{{/if}}
